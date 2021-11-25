@@ -1,19 +1,18 @@
 function rot13(str) {
-    let newArray = [];
+    let newString = "";
     const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     for (let i = 0; i < str.length; i++) {
-      if (typeof str[i] === "undefined") {
-        newArray.push("");
+      if (alphabet.indexOf(str[i])=== -1) {
+        newString += str[i];
       } else if (alphabet.indexOf(str[i]) < 13) {
-        newArray.push(alphabet[alphabet.indexOf(str[i])+13]);
-      } else if (alphabet.indexOf(str[i]) >= 13) {
-        newArray.push(alphabet[alphabet.indexOf(str[i])-13]);
-      } else {
-          newArray.push(str[i]);
-      };
+        newString += alphabet[alphabet.indexOf(str[i])+13];
+      } else  {
+        newString += alphabet[alphabet.indexOf(str[i])-13];
+      } 
       
     };
-    return newArray.join("");
+    return newString;
   }
   
   console.log(rot13("SERR PBQR!!! PNZC"));
+  
