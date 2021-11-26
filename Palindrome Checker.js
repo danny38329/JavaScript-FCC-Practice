@@ -9,11 +9,12 @@ function palindrome(str) {
           continue;
       }; 
     }
-    for (let x = str.length - 1; x >= 0; x--){
-        console.log(str[x]);
+    for (let x = 0; x < newString.length / 2; x++) {
+        if (newString[x].toLowerCase() !== newString[newString.length -1-x].toLowerCase()) {
+        return false;
+    } else {
+        return true;
     }
-
-   return str;
-  }
+  }}
   
-  console.log(palindrome("ey999e"));
+  console.log(palindrome("ey999eye"))
