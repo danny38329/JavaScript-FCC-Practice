@@ -9,12 +9,18 @@ function palindrome(str) {
           continue;
       }; 
     }
-    for (let x = 0; x < newString.length / 2; x++) {
-        if (newString[x].toLowerCase() !== newString[newString.length -1-x].toLowerCase()) {
-        return false;
-    } else {
-        return true;
+    console.log(newString);
+    const len = newString.length;
+
+    // loop through half of the string
+    for (let x = 0; x < len / 2; x++) {
+
+        // check if first and last string are same
+        if (newString[x].toLowerCase() !== newString[len - 1 - x].toLowerCase()) {
+            return false;
+        }
     }
-  }}
+    return true;
+}
   
-  console.log(palindrome("ey999eye"))
+  console.log(palindrome("1 eye for of 1 eye."))
